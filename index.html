@@ -1,10 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Christmas</title>
+
+    <link rel="icon" href="assets/favicon.png">
+
+    <!-- VIEW & CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&family=Poppins&display=swap" rel="stylesheet">
+    <!-- SWIPER.JS -->
+
+    <!-- REMIX ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- JQUERY -->
+
 </head>
 <body>
-$END$
+
+<!--------------- PRELOADER --------------->
+
+<!--------------- SCROLL TO TOP BUTTON --------------->
+
+<!--------------- HEADER --------------->
+
+<header class="home" id="home">
+    <nav>
+        <!--NAV LOGO-->
+        <div class="nav__logo">
+            <img src="assets/santa_claus.png" alt="santa_claus">
+            <h2 id="company">Christmas</h2>
+        </div>
+        <!--NAV LOGO-->
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li>
+                    <a href="#home" class="ri-home-3-line icon"></a>
+                    <a href="#home" class="pages">Home</a>
+                </li>
+                <li>
+                    <a href="#shop" class="ri-store-2-line icon"></a>
+                    <a href="#shop" class="pages">Shop</a>
+                </li>
+                <li>
+                    <a href="#share" class="ri-star-line icon"></a>
+                    <a href="#share" class="pages">Share</a>
+                </li>
+                <li>
+                    <a href="#party" class="ri-emotion-line icon"></a>
+                    <a href="#party" class="pages">Party</a>
+                </li>
+            </ul>
+
+            <div class="nav__close" id="nav-close" onclick="hideNaw()">
+                <i class="ri-close-line"></i>
+            </div>
+            <img src="assets/christmas-banner.png" alt="christmas-banner" id="banner">
+
+        </div>
+        <div class="nav__toggle" id="nav-toggle" onclick="showNaw()">
+            <i class="ri-apps-line"></i>
+        </div>
+    </nav>
+    <!--LANDING PAGE-->
+    <div class="header" id="header">
+        <img src="assets/christmas-tree.png" alt="christmas-tree">
+        <div class="content">
+            <h2 id="title">Merry Christmas!</h2>
+            <p>
+                Christmas is a time for bonding with family and friends! <br>
+                Wish everyone a Merry Christmas and <br>
+                a happy New Year!
+            </p>
+            <button>Explore</button>
+        </div>
+    </div>
+
+</header>
+
+<!--------------- GIFT SHOP --------------->
+<section class="gifts" id="shop">
+    <h2>Gift Shop</h2>
+    <p>
+        Best quality gifts for you and your loved ones to enjoy during Christmas.
+    </p>
+    <div class="items">
+        <div>
+            <img src="assets/christmas-cup.png" alt="christmas-cup" id="cup">
+            <span>Ceramic Cup<br><span class="price">$15</span></span>
+            <button class="add" id="add1">Add to cart</button>
+        </div>
+        <div>
+            <img src="assets/coat.png" alt="christmas-cup" id="coat">
+            <span>100% Cotton Winter Coat<br><span class="price">$25</span></span>
+            <button class="add" id="add2">Add to cart</button>
+        </div>
+        <div>
+            <img src="assets/sock.png" alt="christmas-cup" id="sock">
+            <span>Cotton Socks<br><span class="price">$10</span></span>
+            <button class="add" id="add3">Add to cart</button>
+        </div>
+        <div>
+            <img src="assets/snow-globe.png" alt="christmas-cup" id="globe">
+            <span>Snow Globe<br><span class="price">$20</span></span>
+            <button class="add" id="add4">Add to cart</button>
+        </div>
+    </div>
+    <!--POP UPS-->
+    <div class="pop-up popup1" id="pop-up1">
+        <span class="close close1">&times;</span>
+        <img class="pop-up-content" id="pop-up-cup">
+    </div>
+    <div class="pop-up popup2" id="pop-up2">
+        <span class="close close2">&times;</span>
+        <img class="pop-up-content" id="pop-up-coat">
+    </div>
+    <div class="pop-up popup3" id="pop-up3">
+        <span class="close close3">&times;</span>
+        <img class="pop-up-content" id="pop-up-socks">
+    </div>
+    <div class="pop-up popup4" id="pop-up4">
+        <span class="close close4">&times;</span>
+        <img class="pop-up-content" id="pop-up-globe">
+    </div>
+</section>
+
+<!--------------- SHARE A GIFT --------------->
+
+<div class="share" id="share">
+    <img src="assets/jingle-bells.png">
+    <h2>Share A Gift</h2>
+    <p>Sharing is caring. <br> Share a gift to someone you care!</p>
+</div>
+
+<!--------------- PARTY --------------->
+
+<!--------------- FOOTER --------------->
+
+<!-- SCRIPT -->
+<script src="main.js"></script>
 </body>
 </html>
