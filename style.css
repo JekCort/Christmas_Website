@@ -313,7 +313,7 @@ button:hover {
     margin: 0.4em;
 }
 
-.gifts .items{
+.gifts .items {
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, max-content);
@@ -321,7 +321,7 @@ button:hover {
     align-items: center;
 }
 
-.gifts .items div{
+.gifts .items div {
     position: relative;
     margin: 1em;
     display: flex;
@@ -338,7 +338,7 @@ button:hover {
     transition: all 0.5s;
 }
 
-.gifts img:hover{
+.gifts img:hover {
     transform: translateY(-0.5em);
 }
 
@@ -348,11 +348,11 @@ button:hover {
 
 .items dive span, .gifts button {
     color: var(--text-color);
-    font-family: 'Nunito',sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 1.2em;
 }
 
-.items div .add{
+.items div .add {
     width: 8em;
     height: 2em;
     font-size: 0.8em;
@@ -366,7 +366,8 @@ button:hover {
     margin: 0.5em;
     transition: all 0.5s;
 }
-.items div .add:hover{
+
+.items div .add:hover {
     background: #d37231;
     color: #fff;
 }
@@ -378,7 +379,7 @@ button:hover {
 
 /*---POP UPS---*/
 
-.pop-up{
+.pop-up {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -389,10 +390,10 @@ button:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0, 0, 0, 0.65);
 }
 
-.pop-up .pop-up-content{
+.pop-up .pop-up-content {
     width: 80%;
     margin: 4em;
     position: relative;
@@ -410,19 +411,20 @@ button:hover {
 }
 
 .close:hover {
-    color:#ccc;
+    color: #ccc;
 }
 
-.pop-up-content{
+.pop-up-content {
     animation: zoom 0.35s linear;
 }
 
 @keyframes zoom {
-    from{
-       scale: 0;
-    } to {
-    scale: 1;
-          }
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
 }
 
 /* ----------- SHARE A GIFT ----------- */
@@ -437,12 +439,159 @@ button:hover {
     text-align: center;
     background: var(--bg-color);
 }
- .share img[src="assets/jingle-bells.png"] {
-     width: 80px;
-     transform: translate(170px, 120px) rotate(40deg);
- }
+
+.share img[src="assets/jingle-bells.png"] {
+    width: 80px;
+    transform: translate(170px, 120px) rotate(40deg);
+}
+
+/*---POP UPS---*/
+
+.swiper {
+    width: 750px;
+    height: 385px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.swiper-slide {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    background: #6fff73;
+    box-shadow: 4px 4px 10px var(--header--change-color);
+}
+
+.swiper-slide:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    clip-path: circle(65.4% at 50% 100%);
+    background: radial-gradient(50% 100%, #cbaaaa, #e33838);
+    z-index: 66;
+    transition: all 0.5s;
+}
+
+.swiper-slide:hover:before {
+    clip-path: circle(70% at 50% 100%);
+}
+
+.swiper-slide i {
+    position: absolute;
+    transform: translate(70px, 10px);
+    margin: 12px;
+    font-size: var(--text-large-font);
+    cursor: pointer;
+    z-index: 99;
+}
+
+.swiper-slide h2 {
+    font-size: 1.2em;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(-50px);
+    z-index: 90;
+}
+
+.swiper-slide img {
+    position: absolute;
+    z-index: 100;
+    transform: translate(-20px, 45px);
+}
+
+.swiper-slide img[src='assets/snowman.png'] {
+    width: 150px;
+    transform: translate(-70px, 10px);
+}
+
+.swiper-slide img[src='assets/gingerbread-man.png'] {
+    width: 120px;
+    transform: translate(-60px, 20px);
+}
+
+.swiper-slide img[src='assets/santa-hat.png'] {
+    width: 120px;
+    transform: translate(-60px, 50px);
+}
+
+.swiper-slide img:hover {
+    scale: 1.1;
+}
+
 /* ----------- PARTY ----------- */
 
+.party {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.party h2 {
+    margin: 0.4em;
+}
+
+.party p {
+    padding: 4px 4px 15px 4px;
+}
+
+.signup {
+    width: 65%;
+    margin: 25px;
+    padding: 15px;
+    display: flex;
+    justify-self: start;
+    align-items: start;
+    flex-direction: column;
+    border-radius: 60px;
+    background: #e32e2e;
+}
+
+.signup p {
+    padding: 10px 5px 8px 32px;
+    color: #fff;
+    text-align: left;
+    z-index: 4;
+}
+
+.signup form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    z-index: 4;
+}
+
+.signup input{
+    width: 250px;
+    margin: 10px 5px 8px 10px;
+    padding: 12px;
+    align-items: start;
+    outline: none;
+    border: none;
+    background: #e5e5e5;
+    border-radius: 15px;
+}
+
+.signup button{
+    font-size: var(--text-font);
+    padding: 10px 8px;
+}
+
+.signup img{
+    width: 175px;
+    position: absolute;
+    left: 65%;
+    z-index: 2;
+}
 /* ----------- FOOTER ----------- */
 
 

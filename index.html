@@ -13,11 +13,12 @@
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@1&family=Poppins&display=swap" rel="stylesheet">
     <!-- SWIPER.JS -->
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!-- REMIX ICONS -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- JQUERY -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
 </head>
 <body>
 
@@ -134,9 +135,50 @@
     <img src="assets/jingle-bells.png">
     <h2>Share A Gift</h2>
     <p>Sharing is caring. <br> Share a gift to someone you care!</p>
+    <!--SWIPER-->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <i class="ri-share-forward-line"></i>
+                <h2>Candy Cane <br> $4</h2>
+                <img src="assets/candy-cane.png">
+            </div>
+            <div class="swiper-slide">
+                <i class="ri-share-forward-line"></i>
+                <h2>Snowman <br> $5</h2>
+                <img src="assets/snowman.png">
+            </div>
+            <div class="swiper-slide">
+                <i class="ri-share-forward-line"></i>
+                <h2>Santa Claus's Hat <br> $6</h2>
+                <img src="assets/santa-hat.png">
+            </div>
+            <div class="swiper-slide">
+                <i class="ri-share-forward-line"></i>
+                <h2>Gingerbread Man <br> $3</h2>
+                <img src="assets/gingerbread-man.png">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
 </div>
 
+
 <!--------------- PARTY --------------->
+
+<div class="party" id="party">
+    <h2>Party</h2>
+    <p>Celebrate Christmas with a wonderful party! <br> Sign up below now!</p>
+    <div class="signup">
+        <p>Sign up to receive an email on the details. <br> You may cancel your registration anytime.</p>
+    <form>
+        <input type="email" placeholder="Enter Email" id="email" autocomplete="off">
+        <button type="submit" class="signUp">Sign Up</button>
+    </form>
+        <img src="assets/christmas-label.jpg">
+    </div>
+</div>
 
 <!--------------- FOOTER --------------->
 
