@@ -123,8 +123,39 @@ nav {
 }
 
 .nav__toggle {
+    font-size: 1em;
     display: none;
     visibility: hidden;
+}
+
+nav i {
+    font-size: 1.5em;
+    text-decoration: none;
+    color-rendering: var(--dark-color);
+}
+
+#moon {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    margin: 1.2em 1.1em;
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+#sun {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    margin: 1.2em 1.1em;
+    display: inline-flex;
+    visibility: hidden;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.5s;
 }
 
 @media screen and (max-width: 880px) {
@@ -199,6 +230,14 @@ nav {
         visibility: visible;
         cursor: pointer;
         transition: all 0.5s;
+    }
+
+    #moon{
+        margin: 1.1em;
+    }
+
+    #sun{
+        margin: 1.1em;
     }
 }
 
@@ -563,14 +602,14 @@ button:hover {
     z-index: 4;
 }
 
-.signup form{
+.signup form {
     display: flex;
     flex-direction: column;
     padding-left: 30px;
     z-index: 4;
 }
 
-.signup input{
+.signup input {
     width: 250px;
     margin: 10px 5px 8px 10px;
     padding: 12px;
@@ -581,19 +620,98 @@ button:hover {
     border-radius: 15px;
 }
 
-.signup button{
+.signup button {
     font-size: var(--text-font);
     padding: 10px 8px;
 }
 
-.signup img{
+.signup img {
     width: 175px;
     position: absolute;
     left: 65%;
     z-index: 2;
 }
-/* ----------- FOOTER ----------- */
 
+/* ----------- FOOTER ----------- */
+.footer {
+    width: 100%;
+    background: var(--bg-color);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 50px;
+    z-index: 10;
+}
+
+.footer .links h2 {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    text-align: left;
+    font-size: var(--text-large-font);
+}
+
+.links ul {
+    list-style: none;
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.5s;
+}
+
+.links ul li a:hover {
+    color: var(--hover-color);
+}
+
+.footer p {
+    margin-bottom: 40px;
+    font-size: var(--text-font);
+    color: var(--dark-color);
+    z-index: 5;
+}
+
+.footer img[src="assets/fireplace.jpg"] {
+    width: 180px;
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+    z-index: 2;
+}
+
+
+.footer img[src="assets/snowflake.jpg"] {
+    width: 80px;
+    left: 100px;
+    top: 30px;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    z-index: 2;
+}
+
+.footer img[src="assets/snowflake.png"] {
+    width: 64px;
+    position: absolute;
+    right: 40px;
+    filter: hue-rotate(140deg);
+    z-index: 2;
+}
+
+.footer img[src="assets/jingle-bells.png"] {
+    width: 80px;
+    transform: translate(-250px, -200px) rotate(-40deg);
+}
 
 /* ----------- SLIDE IN WHEN IN VIEW ----------- */
 /* Slide In From Left */

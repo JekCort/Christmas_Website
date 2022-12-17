@@ -44,6 +44,7 @@ function removeNav() {
         navigation.style.height = '80px';
     }
 }
+
 navLinks.forEach(link => link.addEventListener('click', removeNav))
 
 /* ------------- POP UP MODALS ------------- */
@@ -135,8 +136,60 @@ const swiper = new Swiper(".mySwiper", {
 
 /* ------------- PARTY SIGNUP FORM ------------- */
 
+function signUp() {
+    if (document.getElementById('email').validity.valid) {
+        alert('Signed up successfully!');
+    } else {
+        return;
+    }
+}
+
 /* ------------- SCROLL TO SECTION------------- */
+
+function scrollToShop() {
+    const shop = document.getElementById('shop');
+    shop.scrollIntoView();
+}
 
 /* ------------- SLIDE IN WHEN IN VIEW ------------- */
 
+
+
 /* ------------- TOGGLE LIGHT/DARK MODE ------------- */
+// VARIABLES
+const moon = document.getElementById('moon');
+const sun = document.getElementById('sun');
+let root = document.querySelector(':root');
+
+function  changeToDark() {
+    moon.style.visibility = 'hidden';
+    moon.style.opacity = '0';
+    sun.style.visibility = 'visible';
+    sun.style.opacity = '1';
+
+    document.getElementById('snowflake').style.visibility= 'visible'
+    document.getElementById('snowflake').style.opacity= '1'
+
+    // REST PROPERTIES
+    root.style.setProperty('--text-color', '#fff');
+    root.style.setProperty('--bg-color', '#08613d');
+    root.style.setProperty('--dark-color', '#aaf5ff');
+    root.style.setProperty('--hover-color', 'rgb(238, 179, 179)');
+    root.style.setProperty(' --header--change-color', '#11ab73d7');
+}
+function  changeToLight() {
+    moon.style.visibility = 'visible';
+    moon.style.opacity = '1';
+    sun.style.visibility = 'hidden';
+    sun.style.opacity = '0';
+
+    document.getElementById('snowflake').style.visibility= 'hidden'
+    document.getElementById('snowflake').style.opacity= '0'
+
+    // REVERT PROPERTIES
+    root.style.setProperty('--text-color', '#000');
+    root.style.setProperty('--bg-color', '#C2FFE7');
+    root.style.setProperty('--dark-color', '#010050');
+    root.style.setProperty('--hover-color', 'rgb(220, 117, 117)');
+    root.style.setProperty(' --header--change-color', '#aee1ced7');
+}
