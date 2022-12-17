@@ -26,7 +26,67 @@
 
 /* ----------- PRELOADER ----------- */
 
+.preloader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: var(--bg-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 10001;
+}
+
+.loader {
+    width: 10em;
+    height: 10em;
+    position: relative;
+    border-radius: 50%;
+    background: transparent;
+    border-top: 2px solid var(--dark-color);
+    border-left: 2px solid var(--dark-color);
+    border-bottom: none;
+    border-right: none;
+    animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* ----------- SCROLL TO TOP BUTTON ----------- */
+
+#scrollToTopBtn {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    border-radius: 50%;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transform: translate(90vw, 90vh);
+    transition: all 0.5s;
+}
+
+#scrollToTopBtn i {
+    padding: 8px;
+    background: var(--dark-color);
+    font-size: 1.2em;
+    border-radius: 50%;
+    color: var(--bg-color);
+    transition: all 0.5s;
+}
+
+#scrollToTopBtn i:hover {
+    color: #fff;
+    background: #56270a;
+}
 
 /* ----------- MAIN HEADER & NAV ----------- */
 .home {
@@ -232,11 +292,11 @@ nav i {
         transition: all 0.5s;
     }
 
-    #moon{
+    #moon {
         margin: 1.1em;
     }
 
-    #sun{
+    #sun {
         margin: 1.1em;
     }
 }
@@ -710,13 +770,191 @@ button:hover {
 
 .footer img[src="assets/jingle-bells.png"] {
     width: 80px;
-    transform: translate(-250px, -200px) rotate(-40deg);
+    transform: translate(-230px, -125px) rotate(-40deg);
 }
 
 /* ----------- SLIDE IN WHEN IN VIEW ----------- */
 /* Slide In From Left */
 
+[data-inViewport='slideLeft'] {
+    transition: 1.5s cubic-bezier(0.4, 2, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-4em);
+    transition-delay: 0.3s;
+}
+
+[data-inViewport='slideLeft'].inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0em);
+}
+
 /* Slide In From Top */
 
+[data-inViewport='slideTop'] {
+    transition: 1.5s cubic-bezier(0.4, 2, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4em);
+    transition-delay: 0.3s;
+}
+
+[data-inViewport='slideTop'].inViewport {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0em);
+}
 
 /* ----------- BREAKPOINTS / SCREEN ADAPT ----------- */
+
+@media screen  and (max-width: 1023px) {
+    .footer img[src='assets/fireplace.jpg'] {
+        scale: 0.75;
+        bottom: -30px;
+    }
+}
+
+@media screen  and (max-width: 945px) {
+    .content {
+        scale: 0.83;
+    }
+
+    .header img {
+        position: relative;
+    }
+
+    .signup img {
+        transform: translateY(25px);
+        scale: 0.85;
+    }
+}
+
+@media screen  and (max-width: 880px) {
+    .header {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .header img {
+        position: absolute;
+        transform: translate(300px, 10px);
+        scale: 0.7;
+    }
+
+    .swiper {
+        scale: 0.9;
+    }
+
+}
+
+@media screen  and (max-width: 755px) {
+    .header img {
+        scale: 0.5;
+    }
+
+    .swiper {
+        scale: 0.7;
+        left: -30px;
+    }
+
+    .signup img {
+        scale: 0.65;
+        transform: translate(-30px, 60px);
+    }
+
+    .footer img[src='assets/fireplace.jpg'] {
+        right: 120px;
+    }
+}
+
+@media screen  and (max-width: 658px) {
+    .header img {
+        top: 300px;
+        scale: 0.45;
+    }
+
+    .gifts .items {
+        grid-template-columns: repeat(1, max-content);
+    }
+
+    div .swiper {
+        scale: 0.6;
+        top: -30px;
+        left: -70px;
+    }
+
+    .signup img {
+        scale: 0.6;
+        transform: translate(-50px, 200px);
+    }
+
+    .signup form {
+        scale: 0.9;
+        transform: translateX(-15px);
+    }
+    .footer img[src='assets/fireplace.jpg'] {
+        right: 170px;
+    }
+    .footer img[src='assets/jingle-bells.png'] {
+        scale: 0.7;
+        transform: translate(-250px, -220px) rotate(-40deg);
+    }
+}
+
+@media screen  and (max-width: 658px) {
+    .header img {
+        left: -100px;
+    }
+    div .swiper {
+        scale: 0.4;
+        left: -100px;
+        top: -60px;
+    }
+    .signup p, .signup form{
+        padding-left: 8px;
+    }
+    .signup img {
+        scale: 0.5;
+        transform: translate(-85px, 280px);
+    }
+
+}
+
+@media screen  and (max-width: 470px) {
+
+    .header img {
+        scale: 0.4;
+        top: 330px;
+        left: -100px;
+    }
+    .share img[src='assets/jingle-bells.png']{
+        scale: 0.85;
+    }
+    div .swiper {
+        left: -170px;
+    }
+    .signup img {
+        scale: 0.4;
+        transform: translate(-150px, 365px);
+    }
+    .footer img[src='assets/fireplace.jpg'] {
+        right: 100px;
+    }
+}
+
+@media screen  and (max-width: 410px) {
+    .header img {
+        top: 250px;
+        left: -160px;
+    }
+        .share img[src='assets/jingle-bells.png'] {
+            scale: 0.7;
+        }
+    div .swiper {
+        left: -180px;
+    }
+    .signup input{
+        width: 200px;
+    }
+}

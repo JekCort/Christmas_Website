@@ -1,7 +1,23 @@
 /* ------------- PRELOADER ------------- */
 
+function removeLoader() {
+    document.querySelector('.preloader').style.display = 'none';
+}
+
+window.addEventListener('load', removeLoader)
+
 /* ------------- SCROLL TO TOP BUTTON CHANGE ------------- */
 
+function scrollToTopBtn() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById('scrollToTopBtn').style.opacity = '1'
+        document.getElementById('scrollToTopBtn').style.visibility = 'visible'
+    }else {
+        document.getElementById('scrollToTopBtn').style.opacity = '0'
+        document.getElementById('scrollToTopBtn').style.visibility = 'hidden'
+    }
+}
+window.addEventListener('scroll', scrollToTopBtn)
 /* ------------- CHANGE HEADER ON SCROLL ------------- */
 
 const nav = document.querySelector('nav')
@@ -146,6 +162,10 @@ function signUp() {
 
 /* ------------- SCROLL TO SECTION------------- */
 
+function scrollToTop(){
+    window.scrollTo(0,0)
+}
+
 function scrollToShop() {
     const shop = document.getElementById('shop');
     shop.scrollIntoView();
@@ -153,7 +173,18 @@ function scrollToShop() {
 
 /* ------------- SLIDE IN WHEN IN VIEW ------------- */
 
+const inViewport = (entries, observer) => {
+    entries.forEach(entry => {
+        entry.target.classList.toggle('inViewport', entry.isIntersecting)
+    })
+};
+const Obs = new IntersectionObserver(inViewport);
+const obsOptions = {}
+const ELs_inViewport = document.querySelectorAll('[data-inviewport]')
 
+ELs_inViewport.forEach(EL => {
+    Obs.observe(EL, obsOptions)
+})
 
 /* ------------- TOGGLE LIGHT/DARK MODE ------------- */
 // VARIABLES
@@ -161,14 +192,14 @@ const moon = document.getElementById('moon');
 const sun = document.getElementById('sun');
 let root = document.querySelector(':root');
 
-function  changeToDark() {
+function changeToDark() {
     moon.style.visibility = 'hidden';
     moon.style.opacity = '0';
     sun.style.visibility = 'visible';
     sun.style.opacity = '1';
 
-    document.getElementById('snowflake').style.visibility= 'visible'
-    document.getElementById('snowflake').style.opacity= '1'
+    document.getElementById('snowflake').style.visibility = 'visible'
+    document.getElementById('snowflake').style.opacity = '1'
 
     // REST PROPERTIES
     root.style.setProperty('--text-color', '#fff');
@@ -177,14 +208,15 @@ function  changeToDark() {
     root.style.setProperty('--hover-color', 'rgb(238, 179, 179)');
     root.style.setProperty(' --header--change-color', '#11ab73d7');
 }
-function  changeToLight() {
+
+function changeToLight() {
     moon.style.visibility = 'visible';
     moon.style.opacity = '1';
     sun.style.visibility = 'hidden';
     sun.style.opacity = '0';
 
-    document.getElementById('snowflake').style.visibility= 'hidden'
-    document.getElementById('snowflake').style.opacity= '0'
+    document.getElementById('snowflake').style.visibility = 'hidden'
+    document.getElementById('snowflake').style.opacity = '0'
 
     // REVERT PROPERTIES
     root.style.setProperty('--text-color', '#000');
